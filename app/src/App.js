@@ -12,7 +12,7 @@ class  App extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get("http://localhost:8080/api/")
+    axios.get("http://https://54.208.190.133:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
@@ -27,7 +27,7 @@ class  App extends React.Component {
     console.log(id)
     evenet.preventDefault();
     if(id===0){
-      axios.post("http://localhost:8080/api/",{
+      axios.post("http://54.208.190.133:8080/api/",{
         name:this.state.name,
         email:this.state.email,
         password:this.state.password
@@ -35,7 +35,7 @@ class  App extends React.Component {
         this.componentDidMount();
       })
     }else{
-      axios.put("http://localhost:8080/api/",{
+      axios.put("http://54.208.190.133:8080/api/",{
         id:id,
         name:this.state.name,
         email:this.state.email,
@@ -46,13 +46,13 @@ class  App extends React.Component {
     }
   }
   delete(id){
-    axios.delete("http://localhost:8080/api/"+id)
+    axios.delete("http://54.208.190.133:8080/api/"+id)
     .then(()=>{
       this.componentDidMount();
     })
   }
   edit(id){
-    axios.get("http://localhost:8080/api/"+id)
+    axios.get("http://54.208.190.133:8080/api/"+id)
     .then((res)=>{
       this.setState({
         id:res.data.id,
