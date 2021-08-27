@@ -12,7 +12,7 @@ class  App extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get("http://localhost:8080/api/")
+    axios.get("http://https://localhost:8080/api/")
     .then((res)=>{
       this.setState({
         users:res.data,
